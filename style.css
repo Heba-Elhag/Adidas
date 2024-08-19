@@ -1,0 +1,157 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: darkblue;
+    height: 100vh;
+    width: 100%;
+    /* عشان اخلي الديف في النص */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* غشان اعمل الدايرة */
+body::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    position: absolute;
+    /* عشان انزل الدايرة تحت المربع */
+    z-index: -1;
+    clip-path: circle(40% at right 80%);
+
+}
+.container{
+    min-height: 80%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+}
+nav .logo{
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 7px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    
+}
+nav ul li a:hover{
+    color: pink;
+    font-size: 20px;
+
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+.content .text{
+    color: white;
+    width: 40%;
+}
+.content .text h2{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+.content .text p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin: 10px 0;
+
+}
+.content .image{
+    width: 40%;
+}
+.content .image img{
+    width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:950px) and (max-width:1150px){
+    .content .image img{
+        width: 330px;
+    }
+}
+
+@media (max-width:950px){
+    .content, nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content .image, .content .text{
+        width: 100%;
+    }
+   
+    body::after{
+        clip-path: circle(40% at bottom);
+    }
+    .content .image img{
+        width: 300px;
+    }
+
+}
+@media (max-width:700px){
+    .content .text h2{
+        font-size:  30px; 
+    } 
+}
+@media (max-width:450px){
+    nav ul li a{
+        font-size:  16px; 
+    } 
+}
